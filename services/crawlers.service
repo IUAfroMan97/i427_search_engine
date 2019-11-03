@@ -1,0 +1,12 @@
+[Unit]
+Description=Web Crawlers
+After=multi-user.target search_engine_db.service
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/jacobgood/search_engine/database_service/db.py
+StandardInput=tty-force
+
+[Install]
+WantedBy=multi-user.target
